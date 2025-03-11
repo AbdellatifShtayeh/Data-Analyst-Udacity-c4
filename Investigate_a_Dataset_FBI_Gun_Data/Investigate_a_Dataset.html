@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>sample</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Investigate_a_Dataset</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7722,7 +7722,7 @@ single background check and “admin” denotes the administrative checks that a
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython2"><pre><span></span> <span class="c1">#import statements for all of the packages that I plan to use.</span>
@@ -7756,12 +7756,15 @@ single background check and “admin” denotes the administrative checks that a
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython2"><pre><span></span><span class="n">nics_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">'data/gun-data.xlsx'</span><span class="p">)</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="c1"># NICS dataset contains monthly gun background check statistics by state</span>
+<span class="c1"># Census dataset contains demographic and economic indicators by state</span>
+<span class="n">nics_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">'data/gun-data.xlsx'</span><span class="p">)</span>
 <span class="n">census_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'data/u.s.-census-data.csv'</span><span class="p">)</span>
 
+<span class="c1"># Quick verify of the dataset</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"NICS Data Shape:"</span><span class="p">,</span> <span class="n">nics_data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Census Data Shape:"</span><span class="p">,</span> <span class="n">census_data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">nics_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -7783,7 +7786,7 @@ Census Data Shape: (85, 52)
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7960,7 +7963,7 @@ Census Data Shape: (85, 52)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython2"><pre><span></span><span class="n">census_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -7974,7 +7977,7 @@ Census Data Shape: (85, 52)
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8162,7 +8165,7 @@ Census Data Shape: (85, 52)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython2"><pre><span></span><span class="n">nics_data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -8304,16 +8307,15 @@ memory usage: 34.7+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython2"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"NICS Missing Values:"</span><span class="p">,</span> <span class="n">nics_data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="c1"># Checking for missing values</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"NICS Missing Values:"</span><span class="p">,</span> <span class="n">nics_data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Census Missing Values:"</span><span class="p">,</span> <span class="n">census_data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
 
 <span class="c1"># Since 'total' is a critical feature, I will drop null-total rows</span>
 <span class="n">nics</span> <span class="o">=</span> <span class="n">nics_data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">'totals'</span><span class="p">])</span>
-
-
 
 <span class="c1"># Verify remaining nulls</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">nics</span><span class="p">[</span><span class="s1">'totals'</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
@@ -8353,12 +8355,14 @@ Census Missing Values: 1062
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython2"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Initial NICS duplicates: </span><span class="si">{</span><span class="n">nics_data</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="c1"># checking if datasets have duplicates</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Initial NICS duplicates: </span><span class="si">{</span><span class="n">nics_data</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Initial Census duplicates: </span><span class="si">{</span><span class="n">census_data</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
+<span class="c1"># Drop duplicates on both datasets for better results</span>
 <span class="n">nics_data</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">census_data</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -8396,10 +8400,11 @@ Initial Census duplicates: 3
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython2"><pre><span></span><span class="k">if</span> <span class="s1">'month'</span> <span class="ow">in</span> <span class="n">nics_data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="c1"># Convert month to datetime for time-based analysis</span>
+<span class="k">if</span> <span class="s1">'month'</span> <span class="ow">in</span> <span class="n">nics_data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
     <span class="n">nics_data</span><span class="p">[</span><span class="s1">'month'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">nics_data</span><span class="p">[</span><span class="s1">'month'</span><span class="p">])</span>
     <span class="n">nics_data</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]</span> <span class="o">=</span> <span class="n">nics_data</span><span class="p">[</span><span class="s1">'month'</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
     <span class="n">nics_data</span><span class="p">[</span><span class="s1">'month_name'</span><span class="p">]</span> <span class="o">=</span> <span class="n">nics_data</span><span class="p">[</span><span class="s1">'month'</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month_name</span><span class="p">()</span>
@@ -8452,7 +8457,7 @@ Initial Census duplicates: 3
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython2"><pre><span></span><span class="c1"># Check for negative totals</span>
@@ -8493,11 +8498,13 @@ Initial Census duplicates: 3
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython2"><pre><span></span><span class="n">census_data_transposed</span> <span class="o">=</span> <span class="n">census_data</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'Fact'</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="c1"># Transform census data from wide to long format</span>
+<span class="n">census_data_transposed</span> <span class="o">=</span> <span class="n">census_data</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'Fact'</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 
+<span class="c1"># Extract and clean relevant economic indicators</span>
 <span class="n">income_cols</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">'Median household income (in 2015 dollars), 2011-2015'</span><span class="p">,</span>
     <span class="s1">'Per capita income in past 12 months (in 2015 dollars), 2011-2015'</span>
@@ -8536,7 +8543,7 @@ Initial Census duplicates: 3
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython2"><pre><span></span><span class="n">state_checks</span> <span class="o">=</span> <span class="n">nics_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'state'</span><span class="p">)[</span><span class="s1">'totals'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -8563,7 +8570,7 @@ Initial Census duplicates: 3
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython2"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Missing values before cleaning:"</span><span class="p">)</span>
@@ -8591,13 +8598,74 @@ dtype: int64
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a9b7406cc9b95a09">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>1D Exploration: Distribution of checks per capita</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=db859a2cdf2da386">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="c1"># Create a histogram with a Kernel Density Estimate (KDE) overlay</span>
+<span class="c1"># 'state_analysis['checks_per_capita']': The data to plot (gun background checks per capita by state)</span>
+<span class="c1"># 'kde=True': Adds a smooth KDE curve to the histogram</span>
+<span class="c1"># 'bins=15': Divides the data into 15 bins for the histogram</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">state_analysis</span><span class="p">[</span><span class="s1">'checks_per_capita'</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Distribution of Gun Background Checks Per Capita by State'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Checks Per Capita'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Number of States'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">'y'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'checks_per_capita_distribution.png'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedImage jp-OutputArea-output" tabindex="0">
+<img alt="No description has been provided for this image" class="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA1EAAAIeCAYAAABa/IWnAAAAOnRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjEwLjAsIGh0dHBzOi8vbWF0cGxvdGxpYi5vcmcvlHJYcgAAAAlwSFlzAAAPYQAAD2EBqD+naQAAgwtJREFUeJzs3Xd8U/X+x/F3RndLN5Qpu2yoTAURUEQRARniVbmK4rgsRUVQFCegF7wo4kBAvQpXURRFwImAorJRhlT2LHTvnSa/P0rzo9BCA22TtK/n49FHm5OTcz7pN03PO9/v+R6DzWazCQAAAABQJkZnFwAAAAAA7oQQBQAAAAAOIEQBAAAAgAMIUQAAAADgAEIUAAAAADiAEAUAAAAADiBEAQAAAIADCFEAAAAA4ABCFFDNucL1tl2hBgC4VFXtPexSn09V+z0AF0KIAlzYyJEjFRkZaf9q0aKFoqKiNGTIEH300UcqKCgotn6fPn00ZcqUMm9/zZo1mjx58kXXmzJlivr06XPJ+ylNXl6eZs6cqa+//rrUfbmC2bNnq2vXrurQoYO+/PLLC6777bff6oEHHtA111yjNm3aqEePHpowYYL++OOPSqm1yNmvm8jISLVq1UpXX321Hn30UZ08ebLc9/fGG28oMjKy3LfrSsr6us/NzdUHH3ygoUOHqlOnTurcubNGjBih5cuXy2q12tfbtGmTIiMjtWnTpoosW1LFtM+JEyfOe52d/R61bNmyct1fSWJjY/Xvf/9bN954o9q3b68ePXrowQcf1JYtWypsn5GRkXrjjTcklfwedqlGjhypkSNHXvZ2SpKVlaU33nhD/fv3V7t27dSxY0fdfvvt+vTTT4u9JtPS0jR58mRt3brVoe2fPn1aDz74YIW8twCuyuzsAgBcWKtWrfTss89KkgoKCpSamqr169drxowZ2rZtm+bMmSODwSBJmjdvnvz9/cu87Q8++KBM640ZM0b//Oc/Ha79YuLi4vTBBx9o5syZFb6vS7Vv3z4tWLBAt912mwYNGqTGjRuXuJ7FYtFjjz2mH374QQMHDtQzzzyj4OBgxcTE6NNPP9U//vEPzZo1SwMGDKi02ocNG6bhw4dLkvLz83Xy5Em9/fbbuueee7Rq1Sp5enpWWi3VRUJCgkaPHq1Tp05p5MiRateunaxWq9atW6ennnpKmzdv1owZM+x/s1XBv/71L/Xq1UtSYU9EZmamPvvsM02dOlUWi0W33357hex327ZtGjt2rIKDg/XPf/5TjRo1Umpqqj799FONHDlSL730koYNG1bu+126dKkiIiIklfwe5mpsNpseeughHTx4UPfff78iIyOVm5urDRs2aNq0adq/f7+mTp0qSdq7d6++/PJLDRkyxKF9/Pbbb1q3bp2eeeaZingKgEsiRAEuzt/fXx06dCi2rE+fPmrUqJFmzpypPn36aODAgZIKA1dFaNCgQYVs19n7KouUlBRJ0s0336xOnTqVut4777yjb7/9VnPmzFH//v2L3XfLLbdo7Nixev7553XdddfJx8enIku2i4iIKPba6dy5syIiInT33Xfrt99+sx/4ovxMnjxZp0+f1tKlS9WwYUP78l69eqlevXqaNWuWevfurRtuuMF5RZazBg0anPcedfXVVys6OloffPBBhYSolJQUPfLII2rYsKHef//9Yn9TN9xwg8aMGaPnn39ePXv2VM2aNct13+c+V1e3bds2bdq0SYsWLVKPHj3sy3v16iWj0ajFixfrgQceUHh4uBOrBNwPw/kANzVy5EjVrFlTn3zyiX3ZucONVq9erYEDB6pdu3bq1q2bHn/8ccXFxdkfv3nzZm3evNk+pKhoeNEnn3yi3r176+qrr9aGDRtKHGKXn5+vl156SZ07d1bnzp01efJkJSUl2e8v6TFFw3+++OILnThxQtddd50k6cknn7Sve+7jCgoKtGTJEt1yyy1q166devXqpdmzZys3N7fYvu655x59/vnn6tevn9q0aaOBAwdq/fr1F/09rl69WkOGDFFUVJS6d++uadOmKTU1VVLhEKii4TV33313qcMMs7OztWjRIvXr1++8ACVJRqNRjzzyiK666ir77+iLL75QZGSkTpw4UWzdc9swMjJSS5Ys0dSpU9WlSxdFRUVpwoQJSkhIuOhzK0lQUJAkFesJSUpK0vPPP6/evXurTZs26tKli8aOHXtebatWrdKQIUPUvn179erVS7NmzVJeXl6J+4mJiVGvXr1066232n+fcXFxmjhxorp06aLOnTtr2rRpmjNnznlDRWfMmKG7775bV155paZNm2Z/7JNPPqlrr71W7dq107Bhw7RmzZpi+zx7mFWRc4exlfW1Eh0drVGjRikqKkq9e/fWihUrLvq73bt3rzZs2KD77ruvWIAq8s9//lN33nmn/Pz8ii0/dOiQ7rvvPrVv317du3fX7NmzZbFY7PdbrVa9++676tu3r9q0aaN+/frpo48+Om/7l9s+F3q/cJTRaFTLli0VExNjX5abm6t///vfuvbaa9WmTRvdcsstWr16dbHHldb+5/ryyy8VFxenp5566rwPJYxGox577DHdeeedysjIsC//8ccfdccddygqKkpt2rTRjTfeqMWLF9vvL3r/27Bhg+688061a9dOffv2LbaO9P+vs9LewyTps88+05AhQ9ShQwe1a9dOgwYNOu+5lubNN9/U1VdfraioKI0ZM0bHjx+XJO3fv1+RkZFaunRpsfVjY2PVsmVLLV++vMTtxcfHSyr5fKU77rhDEydOlMFg0KZNm+yjAP75z3/a3/sKCgr07rvvasCAAWrXrp06dOig22+/Xb///rukwveyJ598UpJ03XXXFXv/+uyzz3TzzTerTZs26tWrl954441ir23AnRGiADdlMpl01VVXaefOnSX+U9q2bZsef/xx3XDDDVqwYIGefPJJbdy4UY899pgk6dlnn1WrVq3UqlUrLV26VK1bt7Y/ds6cOZo8ebImT55c6qeu33zzjXbv3q2XX35ZTzzxhNatW6cxY8aUuf6aNWtq3rx5kgqHAxX9fK5p06ZpxowZ6tOnj95++23deeedWrx4scaMGVPsoGD37t1atGiRJkyYoDfffFNms1kTJkywHyCW5K233tLEiRPVvn17zZ07V2PHjtV3332nkSNHKicnR8OHD7cfxE2bNq3UGn/77TdlZWXplltuKXVfkZGRmjt3rurWrXvR38255syZI6vVqv/85z/23/WMGTMu+jir1SqLxSKLxaK8vDwdPnxYr776qho3bqyrrrpKUuGB1YMPPqhff/1Vjz32mBYtWqQxY8bot99+K3YA+8knn+jRRx9Vy5YtNW/ePD344IP63//+p+eee+68/cbHx+uee+5RYGCg3nvvPQUGBiovL0933323tm/frqeeekozZ85UdHS03nvvvfMev2TJEvuB6qBBg5SQkKBhw4Zp8+bNmjhxot544w3VrVtXY8eOLVO4OdfFXiuxsbG66667lJqaqlmzZunhhx/W7NmzFRsbe8Ht/vLLL5JUatj29PTUtGnT1L1792LLZ86cqY4dO+qdd96x/72e/eHIc889p7lz52rgwIF65513dOONN2rGjBl688037etcbvtc7P3iUhw+fNjes2yz2TR27Fh98sknGjVqlN5++21FRUVp4sSJ551neG77l+SXX35RaGio2rVrV+L9zZo105QpU+zDb9etW6exY8eqdevWeuutt+yvoRdffFHbt28v9tiJEyeqVatWevPNN9W9e3e9+OKLJYbW0t7DlixZomnTpum6667T/PnzNWvWLHl4eGjSpEnFQmVJtm3bpq+//lrTpk3TSy+9pOjoaN1zzz3Ky8tTs2bN1L59e3311VfFHvPVV1/J29tb/fr1K3GbXbp0ka+vrx599FHNmjVLmzZtUk5OjiSpYcOGuv/++xUWFqbWrVsXe78rGkY+e/ZsvfnmmxoxYoQWLlyoF154QcnJyXr44YeVlZWlXr166V//+pekwiHlRf8H5s+fr2eeeUZXXXWV3nnnHd15551asGBBqcEYcDcM5wPcWFhYmPLz85WSkqKwsLBi923btk1eXl66//775eXlJamwF2LXrl2y2Wxq2rSp/fypc4PS7bffrhtvvPGC+65Ro4YWLlxo30ZwcLDGjh2rDRs2FBsyUhpPT0+1bNlSUuFwoJKGIh44cEDLli3TI488Yv8n3b17d9WsWVNPPPGEfv75Z1177bWSpPT0dH3xxRf2gzZfX1/ddddd2rhxY4kHF6mpqXr77bc1fPhw+8GCJDVv3lx33nmnvvjiC91xxx1q2rSpJKlp06alDpcs+qT43N4Hq9Va7KRtqfBTcqPRsc+vmjdvXuyci507d+rbb7+96OPeeustvfXWW8WWeXp6asGCBfbzoeLi4uTj46PJkyfbhyt27dpVJ06csB/IW61WvfHGG+rbt6+mT59u31Zubq6WL19erLcjOTlZ9957r7y9vfXBBx8oODhYkrRixQodOnRIn3/+udq0aSNJ6tatm66//vrz6q5Zs6amTJli/z3NmjVLSUlJ+uabb1S/fn1J0rXXXqt77rlH//73vzVgwACHfqcXe6188MEHslgsWrBggUJDQyVJjRo10m233XbB7Z4+fVqSVK9evTLXIhV+6l904NmtWzetXbtWGzdu1F133aXDhw/r008/1aOPPqoHHnhAktSjRw8ZDAbNnz9fd9xxhwIDAy+7fS72fnGhc7iKwnrRz7Gxsfroo48UHR1t/9v67bff9MsvvxQb7nrNNdcoOztbs2fP1oABA2Q2Fx6SnNv+JYmNjXXo93zgwAENHjzYfu6PJEVFRalr167asmWLrrzySvvy66+/3r7eNddco7i4OPsHOGfXVNp72PHjx3Xvvfdq7Nix9nXr1aunIUOGaPv27apTp06pdRqNRi1atMj+YUuTJk00ePBgLV++XCNGjNDQoUM1bdo0HT9+3P638OWXX+qmm26Sr69vidsMDQ3VggULNGXKFC1cuFALFy6Uh4eHOnTooAEDBmjYsGEym83y9/cv9n5X9HNRD/LZk154e3tr/Pjx+vvvvxUVFWX/W2rZsqXq1aun9PR0vf322xoxYoSefvppSYWv26CgID399NMaNWqUmjVrVnqDAW6AniigCijpAKdz587KycnRLbfcojlz5mjbtm3q0aOHxo0bd9GT2ssyi9e1115bbBKLPn36yMPDQ7/99pvjT6AUmzdvlqTzenhuvvlmmUymYrOahYSEFDufqujE7+zs7BK3/ccffygvL++8bXfq1El169Z1aMa0c4NSkddff12tW7cu9nV270FZnRtyIyIiSn1eZ7vtttu0bNkyLVu2TJ9++ql9mNDo0aPtw9dq1aqlDz/8UJ06dVJMTIx+//13LV68WNu3b1d+fr6kwh6FhISE8wLPPffco6+++qrYBBWjR4/Wvn379OSTT9oP0CVp48aNql+/vj1ASYXn+/Xu3fu8ups0aVLsYHXz5s2KioqyHzQWGThwoOLj43Xo0KGL/i7OdrHXyrZt29ShQwd7gJKk9u3bX/DgV5K95nNnzbyYs8+1MxgMqlu3rtLS0iQV/t5sNpv69Olj71W0WCzq06ePcnNztW3btnJpn8t5v5g6dar99d22bVtdf/31+vzzz/XQQw/Zz4f6/fffZTAYdO211573POLj47V//3779s5t/5IYDAaHfs+jR4/WK6+8oqysLEVHR+ubb77Ru+++K0n213mRc3u/brjhBiUmJurw4cNl2teUKVM0adIkpaena9euXfr666+1ZMmSEvd1rg4dOhTrrW7RooXq1atnf1+9+eab5ePjY++N2rlzpw4ePHjRiSA6deqk77//XosXL9ZDDz2ktm3b6o8//tCzzz5r73kvzauvvqp77rlHSUlJ2rFjh7744gt7D3Bpz2fHjh3Kzs4u8XUrSb/++usF6wXcAT1RgBuLjY2Vt7e3/TyXs0VFRendd9/VBx98oEWLFumdd95ReHi47r//ft19990X3O7ZB4+lObfny2g0KigoyH7wVx6Khlede8Kz2WxWcHCw0tPT7cvOPS+i6MCvtIBTtO1zn0fRsrO3fTFFBz0nT54s9unqHXfcUezA9lJnCivpnI+yXI+lZs2aatu2bbFlvXv31s0336zZs2fbe/FWrFih//znPzp16pSCgoLUokULeXt72x9TNLlGWV4XWVlZuuKKKzR79mx9+umnMplMkgp7QEp6fGm//7OlpqaW2OtQtJ6jr7mLvVZK29/FTrwveh3ExMTYP8U/V2xsrMLDw4uFhAu179kTm5S2vaIwdDntcznvF+PGjbNPUmI0GhUQEKC6devat130PGw2W7Een7PFxcXZe3VKek2cq27dutq5c+cF1zl16pRq164tqfC8v2effVY//vijDAaDrrjiCnXs2FHS+ecKnTsRRdHvtayvs2PHjmnatGnauHGjzGazGjdubP9g6mJ/tyU999DQUPu+/f39deONN2rFihUaN26cli9friuuuOKCk94UMRqN9nNYpcLX+Wuvvab//e9/WrZsme66664SH7dr1y49//zz2rVrl7y9vdW0aVP7a72051P0ui3qPT3XpZ5rB7gSQhTgpgoKCrR582ZdeeWVxQ5WznbNNdfYh8xs3LhRH374oWbMmKEOHTqoffv2l7X/cw8oCgoKih0ol/RJcVZWlkP7CAwMlFR4DsfZB7X5+flKTk4u9km6o4q2nZCQoCZNmhS7Lz4+/rxejwvp3r27fHx89O233xab8a5WrVqqVatWiY8pLeRlZmaWeb+XwmQyqXnz5lq3bp0kaevWrZo8ebLuuusu3XffffZemX//+9/atm2bpMKhm5KKTRwiFR4o7dmzp1hP2Ycffqh9+/bp3nvv1YcffqhRo0ZJKvxdHD169Lx6EhMTL1pzYGBgiRNpFJ0wf/br4HJfc0XbK2l/RQeGpSkaxrp+/foSQ1RBQYGGDBmiFi1aaNGiRWWqpeh3/9///ve8CSkkqU6dOvZ2uZz2kS79/aJu3brnhfVzBQQEyNfXVx9++GGJ919xxRUXfPy5rrnmGq1du1a7du0qcd/79+/XgAED9Nhjj+mBBx7Q448/roMHD+r999/XlVdeKU9PT2VnZ+uzzz4777HntnPRa7QsIdVqteqBBx6Qh4eHPv30U7Vq1Upms1kHDhwo0/l7JQW1+Ph4RUVF2W8PHTpUy5cv186dO+3ncF7II488opSUlPMuaREYGKhnnnlGq1at0oEDB0p8bEZGhkaPHq3IyEitXLnS3ku4fv16fffdd6Xus+h1O3v27BInWSlLUAZcHcP5ADf1ySefKC4uTv/4xz9KvP+VV17RsGHDZLPZ5OPjo969e9svrHvq1ClJcvjcnLP99ttvxSa0+O6772SxWNS1a1dJkp+fn5KTk4vNonfuCdylhb8iXbp0kaTzLmS5atUqFRQU2D9JvhTt27eXp6fnedveunWrYmJiSv3EvCT+/v6699579eWXX5Z6rtLZw5WKHiP9f1tIhbO0XexA/XLl5+drz5499oPWHTt2yGq1asKECfYAVVBQYB8+ZLVa1bhxYwUHB583G97XX3+t+++/v1gbh4eHq3v37rr55pv1+uuv288X69Kli44fP669e/fa183NzdXPP/980Zo7d+6sHTt22LdVZMWKFQoPD7c/F39/f/t5SUXOfc2VRbdu3bRjx45iE0kcOHDgvP2fq1mzZurZs6fefffdEtdduHChEhISNHjw4DLXUtRrkJycrLZt29q/UlJS9NprryklJaVc2qcs7xeXo0uXLsrKypLNZiv2PPbv368333zT4RnbBg4cqPDwcM2YMeO8oa1Wq9U+mUNRD962bdvUr18/devWzT68sei1d+4HGT/99FOx299++63q1q1b4uUXzn0PS05O1uHDhzVs2DC1a9fOfp5Xafs6144dO4r1gu/cuVMnT55Ut27d7Ms6d+6shg0batasWUpOTr7o6+mKK67Qxo0bS7zgd1xcnLKystS8efMSn0/Re9I///lPNWvWzP4/49znc+7/kvbt28vDw0OxsbHF2tvDw0OvvvrqeTN/Au6InijAxWVkZNj/+VmtViUnJ2vDhg1aunSpBg4cWOr1Zq666iq9//77mjJligYOHKj8/HwtXLhQQUFB9n/INWrU0I4dO/T77787fI2phIQEjR8/XiNHjtSRI0f0n//8R927d7fP+ta7d2999NFHeuqppzR8+HDt379f7733XrF/0gEBAZIKz5do0qTJeZ92N23aVLfeeqvmzZunnJwcde3aVXv37tW8efPUtWtXXXPNNQ7VfLagoCA98MADmjdvnjw8PHTdddfpxIkTev3119W0aVOHLzY5duxYnTp1Sg8//LD69eunfv36qWbNmoqPj9fatWv1zTffqFatWvbffbdu3eTj46OXX35ZjzzyiDIzMzVv3rwSh2ZeqtOnTxc7cEpLS9OSJUt04sQJzZ49W5Lss5u98MILGjp0qNLS0rR48WJFR0dLKuzJ8ff31/jx4/XCCy/oueeeU9++fXXkyBG99tpr+sc//qGQkJDz9v3kk0/q559/1rRp0/T+++9rwIABevfddzV27Fg9/PDDqlGjht577z0lJiZe9FyjUaNGacWKFRo1apTGjRun4OBgffnll9q4caNmzJhhP4Dr1auXVq1apXbt2qlRo0Zavnx5ib1fF3P33Xdr2bJluu+++zR+/HgVFBTotddek4eHx0Uf+/zzz+vuu+/W8OHD9c9//lMdOnRQZmamvvvuO61cuVLDhw+/4CyO52revLn94s0nT55UmzZtdPjwYc2ZM0f16tVTw4YNZTKZLrt9yvJ+cTmuvfZade7cWWPGjNGYMWPUpEkT7dy5U2+88YZ69OhRYo0XEhAQoJdfflnjxo3T8OHDddddd6lRo0Y6ffq0Pv74Y/3xxx96+eWX7cPO2rVrp6+//lqtW7dWRESEduzYofnz58tgMJwXwj744AN5e3urQ4cO+v7777V27Vq9+uqrpdYhFX8Pq1u3rpYsWaKIiAjVqFFDGzZs0H//+19JpZ+jWaSoJ+uhhx5ScnKyXn31Vftr4GxDhw7Vq6++qu7du9uHLJbm3nvv1Y8//qhRo0bpjjvuUNeuXeXj46N9+/bpvffeU7Nmzezvd0XPZ926dQoMDFSjRo3k7++vd955R2azWWazWd99952WLVtW7PkU9Tz98MMP6tmzp5o0aaLRo0fr9ddfV0ZGhrp27arY2Fi9/vrrMhgMatGixQVrBtwBIQpwcX/99ZdGjBghqfDTvtDQUDVq1Egvv/zyBQ/GevbsqdmzZ+u9996znxzesWNHffjhh/YD9TvvvFO7d+/W/fffr5kzZzp0UcrbbrtNOTk5Gjt2rDw9PXXLLbdo0qRJ9mFq3bt31+TJk/XRRx/p+++/V+vWrTVv3rxiF9709/fXqFGjtHTpUq1bt67Ek42nT5+uK664Qp9//rkWLVqkmjVrauTIkRo7duxl9aRJ0vjx4xUWFqbFixfrs88+U1BQkG688UY98sgjDl8Q12QyaebMmerfv78+++wzzZo1SwkJCfLz81PLli01depUDR482L7dgIAAzZ07V6+++qrGjh2runXraty4cedN93w5iiaVkAqHD/r5+al58+Z67bXXdNNNN0kqnImv6ED622+/VVhYmLp27ap58+Zp7Nix2rZtm6699lrdeeed8vX11aJFi7Rs2TLVqlVL9957b6nnPISHh2vixIl64YUX9Pnnn2vo0KFatGiRpk+frueee05ms1kDBw5UcHDwRU/YDw8P18cff6xXX31V06dPV35+vlq0aKG33nrLfp0eqTAYWCwWzZo1S2azWf3799djjz1mnx2srIKDg/Xxxx9r+vTpmjJlivz8/DR69OgyXeenTp06Wrp0qf773/9q1apVWrBggTw8PNS4cWPNmjWr1HObLmTmzJmaP3++PvnkE50+fVqhoaHq37+/HnnkEfuHEuXRPhd7v7gcRqNR7777rl5//XXNnz9fiYmJqlWrlu65555is9g5okePHvrss8/03nvvacGCBYqPj1dgYKBat26tjz/+uNgQuJdfflkvvviiXnzxRUmFM2k+//zzWrFihbZu3Vpsu0899ZSWL1+u+fPnq3Hjxpo7d26p04eX9B721ltv2V87np6eatq0qd5++23NmDFDW7duveDwu969e6tBgwaaNGmSLBaLevfuralTp9pnTCzSq1cvvfrqq2X6sCcwMFBLly7VggUL9NNPP+njjz9Wfn6+6tatqwEDBuiBBx6wnwPZrFkzDRgwQEuWLNEvv/yilStX6q233tK///1vPfzww/b3s8WLF+v+++/X1q1b1adPH3Xt2lVXX321Xn31Vf3+++9699139cgjjyg8PFz/+9//tHDhQgUGBuqqq67So48+ag9rgDsz2MpydjIAAJdh//79OnTokG644YZis70NHTpUtWvXLvUaXEBlKbrY7IcffmgfluyqFixYoIULF+qXX34pNvsigMpDTxQAoMJlZWXp4Ycf1h133KG+ffuqoKBAK1eu1J49ezRp0iRnlwe4heXLl2vfvn363//+pwceeIAABTgRIQoAUOHat2+v1157TYsWLdKXX34pm82mVq1aaeHCheVyzg1QHURHR+uTTz7R9ddfr/vvv9/Z5QDVGsP5AAAAAMABTHEOAAAAAA4gRAEAAACAAwhRAAAAAOAAQhQAAAAAOIAQBQAAAAAOYIpzSYmJ6SrPOQoNBik0NKDct4vyR1u5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qt588039+9//Lpd9rFq1SgMHDpQkJSUllcs2AQBlQ4gCAFzUtGnTNHjwYE2YMEEhISGSpEaNGmnOnDkKDQ3V8ePH7ev++uuvGjRokKKiojRs2DDt27fPft+ePXs0cuRIde7cWTfccIM++OAD2Ww2+/3//e9/1bdvX0VFRWnIkCH6/fffz6vl5MmTuu666zRjxgzZbDZt2bJFQ4YMUadOndS3b19Nnz5dFoulzM+tbt266tOnj/766y9Jks1m04cffqh+/fqpU6dOuuOOO7R79277+n369NG0adPUvXt3DR48WFartdj2YmNjNWvWLD3//PO65ZZb5O3tLaPRqC5dumjmzJlKTExUfn6+JGnZsmUaMmSIunbtqqioKD344IP2QPTGG29ozJgxGj9+vDp06KA+ffpo6dKlxer44osvtHz5cs2fP19bt25Vp06dJEkHDx7Ugw8+qF69eqldu3bq37+/1q5dW+bfCQDgImwAAFzA0aNHbc2bN7dt2bLlous2b97cNmLECFt8fLwtOzvbNnr0aNu9995rs9lsttOnT9s6duxoW7x4sS0vL8+2f/9+W9++fW0ff/yxzWaz2T7//HNbly5dbNu3b7cVFBTYPv30U1v79u1tycnJtsmTJ9smT55sO3bsmK137962119/3b7PXr162b744gubzWazHT9+3NajRw/bt99+W2J9d911l23u3Ln22xaLxbZnzx5bnz59bDNnzrTZbDbb4sWLbb169bLt3bvXlpeXZ/vss89snTp1ssXHx9tsNputd+/etkGDBtlSU1Ntqamp5+3j008/tbVt29aWl5d3wd/Vn3/+aWvfvr3tzz//tNlsNtupU6dsN9xwg23OnDk2m81mmzt3rq158+a29957z5aXl2f75ZdfbK1bt7b99ttv9jo+//xz+7p33XWXfds33XSTbfbs2ba8vDxbbm6ubfr06baePXtesB4AQNmZnR3iAACurahnJCwsrEzrjxo1yr7u9ddfr4ULF0qSVqxYoSZNmujOO++UJDVt2lT33XefFi9erNtvv13Lly/XiBEjFBUVJUkaPny4mjRpIm9vb0mFPVAjR45Ur169NGHCBPv+vLy89M033ygoKEidO3fW+vXrZTSWPtDi3Xff1X//+19Jhb1OYWFhuuGGG/TII49IKjy/6MEHH1SLFi0kScOGDdOyZcu0YsUK3XvvvZKkfv36qUaNGiVuPzk5WYGBgfLw8Ljg76l58+ZauXKl6tWrp9TUVMXFxSkkJESxsbH2dSIjIzVq1ChJUo8ePdSvXz999dVXuuqqqy647fnz56tWrVqy2Ww6efKkatSoUWy7AIDLQ4gCAFxQeHi4JCk+Pl4NGzY87/6EhIRiASsoKMj+s4eHh/18qZMnT2rPnj32IWeSZLVaZTKZ7NuvU6dOsW1feeWV9p+3bt2q7t27a82aNZo4caICAwMlFQ4BfOONN/T8888rPj5e11xzjZ577jlFRESU+HweeOABjR8/vtTne/LkSb3yyiuaPXu2fZnFYlGbNm3st2vWrFnq48PDw5WSkqK8vDx5enoWu89qtSolJUUhISEyGo368MMP9fXXX8vX11eRkZHKyMgoNrzx3N937dq1tXfv3lL3XSQ6OlpjxoxRfHy8mjRpopCQkGLbBQBcHs6JAgBcUN26ddW8eXOtXr36vPsSExPVu3dvrVy58qLbiYiIUNeuXbV161b715o1a7R8+XJJhQHh1KlTxR4zZ84cHTx4UJLUv39/zZ8/X7Vr19bzzz8vScrNzdWBAwf03HPPad26dVq5cqXS09M1Y8aMS36+EREReumll4rVuWLFimK9XwaDodTHX3PNNbLZbFqzZs15961du1Y9evTQqVOn9MEHH+jXX3/V119/rTVr1uitt95S3bp1i61/bu/RiRMnVLt27QvWHxsbq4cfflgTJ07Uxo0btWTJEg0YMKAsTx0AUEaEKADART3zzDP6/PPPNW/ePCUnJ8tms2nv3r166KGH1Lp1a/Xr1++i27jlllv0xx9/aMWKFbJYLIqLi9NDDz2kl19+WZI0ZMgQLV26VDt37pTVatXnn3+uJUuWKDg4WFJhr5bJZNLMmTP1448/avXq1TIYDHr00Uf13nvvyWKxKDw8XGaz2f6YS3Hbbbfp7bfftoe3X375RTfffLO2bNlSpseHhYVpwoQJeu6557Ry5Url5uYqPz9f69at09NPP627775btWvXVkZGhsxmszw8PGSxWPTVV1/pl19+sU86IUl//PGHvvrqKxUUFGj9+vVas2aNhg4det4+vby87L1YmZmZKigokI+PjyTpwIEDevPNNyVJeXl5l/x7AQD8P4bzAQAuqkuXLlq8eLHeeecd3XzzzcrOzlZYWJhuvPFGPfjggxc9/0cq7NFauHChZs+erZdeekkmk0m9evXS1KlTJRWGrLS0NE2aNEnx8fFq2rSpFixYYJ8NsEiTJk00fvx4Pf/88+rYsaPefvttvfLKK5o/f75MJpN69uypxx9//JKf6z333CObzaYxY8YoLi5OtWrV0rRp03TdddeVeRsPPPCA/q99O7RRIAigMPxO0QCCYNBgqWCbgGQlFayBBsCtpITNhipIkGRL2EYQCM6Ru3Nz5k58XwGTsX/mzXw+T9/3OR6PeT6fWSwWaZom2+02SbLb7TKOY6qqymQyyWq1Sl3Xud/v73OWy2Wu12tOp1Om02natn3/GfuqqqpcLpes1+vcbrccDofs9/s8Ho/MZrNsNpu0bZtxHL/NEgH4nY+XkTQA/Dvn8znDMKTrur++CgA/mPMBAAAUEFEAAAAFzPkAAAAKeIkCAAAoIKIAAAAKiCgAAIACIgoAAKCAiAIAACggogAAAAqIKAAAgAIiCgAAoICIAgAAKPAJa8N1i9OT7aEAAAAASUVORK5CYII="/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=539051ff54fdc25f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Plot shows most states have moderate background check rates, but a small subset exhibits unusually high activity, likely due to unique regional factors (e.g., cultural norms, state policies).</p>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ab08cd8280c29f99">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Drop rows with missing values (recommended)</p>
+<p>Drop rows with missing values</p>
 </div>
 </div>
 </div>
@@ -8606,7 +8674,7 @@ dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython2"><pre><span></span><span class="n">state_analysis</span> <span class="o">=</span> <span class="n">state_analysis</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span>
@@ -8654,12 +8722,15 @@ dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython2"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">analyze_income_vs_checks</span><span class="p">():</span>
+
+     <span class="c1"># Create a figure with two subplots, sized 12×10 inches</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 
+    <span class="c1"># First subplot: Median household income vs. background checks</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
         <span class="n">x</span><span class="o">=</span><span class="n">state_analysis</span><span class="p">[</span><span class="s1">'Median household income (in 2015 dollars), 2011-2015'</span><span class="p">],</span>
@@ -8669,13 +8740,18 @@ dtype: int64
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Median Household Income (2015 dollars)'</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Background Checks Per Capita'</span><span class="p">)</span>
 
+     <span class="c1"># Calculate Pearson correlation and p-value for median household income</span>
+
     <span class="n">median_corr</span><span class="p">,</span> <span class="n">median_p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span>
         <span class="n">state_analysis</span><span class="p">[</span><span class="s1">'Median household income (in 2015 dollars), 2011-2015'</span><span class="p">],</span>
         <span class="n">state_analysis</span><span class="p">[</span><span class="s1">'checks_per_capita'</span><span class="p">]</span>
     <span class="p">)</span>
+
+    <span class="c1"># Add correlation information to the plot</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Correlation: </span><span class="si">{</span><span class="n">median_corr</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> (p=</span><span class="si">{</span><span class="n">median_p</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">)'</span><span class="p">,</span>
                  <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">'axes fraction'</span><span class="p">)</span>
 
+    <span class="c1"># Second subplot: Per capita income vs. background checks</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
     <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
         <span class="n">x</span><span class="o">=</span><span class="n">state_analysis</span><span class="p">[</span><span class="s1">'Per capita income in past 12 months (in 2015 dollars), 2011-2015'</span><span class="p">],</span>
@@ -8685,17 +8761,20 @@ dtype: int64
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Per Capita Income (2015 dollars)'</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Background Checks Per Capita'</span><span class="p">)</span>
 
+    <span class="c1"># Calculate Pearson correlation and p-value for per capita income</span>
     <span class="n">percap_corr</span><span class="p">,</span> <span class="n">percap_p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span>
         <span class="n">state_analysis</span><span class="p">[</span><span class="s1">'Per capita income in past 12 months (in 2015 dollars), 2011-2015'</span><span class="p">],</span>
         <span class="n">state_analysis</span><span class="p">[</span><span class="s1">'checks_per_capita'</span><span class="p">]</span>
     <span class="p">)</span>
+
+   <span class="c1"># Add correlation information to the plot</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Correlation: </span><span class="si">{</span><span class="n">percap_corr</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> (p=</span><span class="si">{</span><span class="n">percap_p</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">)'</span><span class="p">,</span>
                  <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">'axes fraction'</span><span class="p">)</span>
 
-    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'income_vs_checks.png'</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>                 <span class="c1"># Optimize spacing between subplots</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'income_vs_checks.png'</span><span class="p">)</span>         <span class="c1"># Save the figure to a file</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>      <span class="c1"># Display the figure</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>    <span class="c1"># Close the figure to free memory</span>
 
     <span class="k">return</span> <span class="p">{</span>
         <span class="s1">'median_income_correlation'</span><span class="p">:</span> <span class="n">median_corr</span><span class="p">,</span>
@@ -8724,7 +8803,7 @@ dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython2"><pre><span></span><span class="n">income_check_results</span> <span class="o">=</span> <span class="n">analyze_income_vs_checks</span><span class="p">()</span>
@@ -8795,6 +8874,17 @@ Bottom 5 states by background checks per capita:
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=baf87e8a4e1f8f8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Plot shows that while poorer states generally have higher background check rates, other factors (e.g. population density, gun culture) likely play a significant role. states with lower incomes tend to have higher background check rates per capita, as evidenced by the downward-sloping trend lines, and also there are some outliers like North Dakota.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4ca7d290820f09f9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8821,7 +8911,7 @@ Bottom 5 states by background checks per capita:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython2"><pre><span></span><span class="n">monthly_checks</span> <span class="o">=</span> <span class="n">nics_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'month_name'</span><span class="p">,</span> <span class="n">nics_data</span><span class="p">[</span><span class="s1">'month'</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="p">])[</span><span class="s1">'totals'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -8847,11 +8937,14 @@ Bottom 5 states by background checks per capita:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython2"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">analyze_seasonal_variation</span><span class="p">():</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+    <span class="c1"># Create a bar plot showing monthly totals with months in chronological order</span>
+    <span class="c1"># Uses the 'monthly_checks' which contains 'month_name' and 'totals' columns</span>
     <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'month_name'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'totals'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">monthly_checks</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">[</span>
         <span class="s1">'January'</span><span class="p">,</span> <span class="s1">'February'</span><span class="p">,</span> <span class="s1">'March'</span><span class="p">,</span> <span class="s1">'April'</span><span class="p">,</span> <span class="s1">'May'</span><span class="p">,</span> <span class="s1">'June'</span><span class="p">,</span>
         <span class="s1">'July'</span><span class="p">,</span> <span class="s1">'August'</span><span class="p">,</span> <span class="s1">'September'</span><span class="p">,</span> <span class="s1">'October'</span><span class="p">,</span> <span class="s1">'November'</span><span class="p">,</span> <span class="s1">'December'</span>
@@ -8865,9 +8958,14 @@ Bottom 5 states by background checks per capita:
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
+    <span class="c1"># Calculate the percentage change between consecutive months</span>
     <span class="n">monthly_checks</span><span class="p">[</span><span class="s1">'pct_change'</span><span class="p">]</span> <span class="o">=</span> <span class="n">monthly_checks</span><span class="p">[</span><span class="s1">'totals'</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="c1"># Identify the month with the highest number of background checks</span>
     <span class="n">peak_month</span> <span class="o">=</span> <span class="n">monthly_checks</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">monthly_checks</span><span class="p">[</span><span class="s1">'totals'</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()]</span>
+   <span class="c1"># the lowest number of background checks</span>
     <span class="n">low_month</span> <span class="o">=</span> <span class="n">monthly_checks</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">monthly_checks</span><span class="p">[</span><span class="s1">'totals'</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()]</span>
+    <span class="c1"># Calculate the coefficient of variation (standard deviation / mean)</span>
+    <span class="c1"># this measures the relative dispersion of data points around the mean</span>
     <span class="n">cv</span> <span class="o">=</span> <span class="n">monthly_checks</span><span class="p">[</span><span class="s1">'totals'</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="o">/</span> <span class="n">monthly_checks</span><span class="p">[</span><span class="s1">'totals'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
     <span class="k">return</span> <span class="p">{</span>
@@ -8899,7 +8997,7 @@ Bottom 5 states by background checks per capita:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython2"><pre><span></span><span class="n">seasonal_results</span> <span class="o">=</span> <span class="n">analyze_seasonal_variation</span><span class="p">()</span>
@@ -8969,12 +9067,13 @@ Seasonal Variation Analysis:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython2"><pre><span></span><span class="n">state_monthly_checks</span> <span class="o">=</span> <span class="n">nics_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'state'</span><span class="p">,</span> <span class="s1">'month_name'</span><span class="p">,</span> <span class="n">nics_data</span><span class="p">[</span><span class="s1">'month'</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="p">])[</span><span class="s1">'totals'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="c1"># this creates a dataframe showing monthly check totals for each state</span>
+<span class="n">state_monthly_checks</span> <span class="o">=</span> <span class="n">nics_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'state'</span><span class="p">,</span> <span class="s1">'month_name'</span><span class="p">,</span> <span class="n">nics_data</span><span class="p">[</span><span class="s1">'month'</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="p">])[</span><span class="s1">'totals'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">state_monthly_checks</span> <span class="o">=</span> <span class="n">state_monthly_checks</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">'state'</span><span class="p">,</span> <span class="s1">'month'</span><span class="p">])</span>
-
+<span class="c1"># Sort the dataframe by state and numerical month value</span>
 <span class="n">state_volatility</span> <span class="o">=</span> <span class="n">state_monthly_checks</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'state'</span><span class="p">)[</span><span class="s1">'totals'</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span>
     <span class="p">(</span><span class="s1">'mean'</span><span class="p">,</span> <span class="s1">'mean'</span><span class="p">),</span>
     <span class="p">(</span><span class="s1">'std'</span><span class="p">,</span> <span class="s1">'std'</span><span class="p">),</span>
@@ -8994,10 +9093,11 @@ Seasonal Variation Analysis:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [44]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython2"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">analyze_state_volatility</span><span class="p">():</span>
+ <span class="c1"># Get the 10 states with the highest coefficient of variation (most volatile)</span>
     <span class="n">most_volatile_states</span> <span class="o">=</span> <span class="n">state_volatility</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'cv'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
@@ -9006,16 +9106,19 @@ Seasonal Variation Analysis:
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'State'</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Coefficient of Variation'</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span> <span class="c1"># Adjust layout to prevent label cutoff</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'state_volatility.png'</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
+ <span class="c1"># Extract the top 5 most volatile states for detailed analysis</span>
     <span class="n">top5_volatile</span> <span class="o">=</span> <span class="n">most_volatile_states</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)[</span><span class="s1">'state'</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+ <span class="c1"># Filter the monthly data to only include these 5 states</span>
     <span class="n">top5_data</span> <span class="o">=</span> <span class="n">state_monthly_checks</span><span class="p">[</span><span class="n">state_monthly_checks</span><span class="p">[</span><span class="s1">'state'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">top5_volatile</span><span class="p">)]</span>
 
+   <span class="c1"># Create a line plot showing monthly patterns for the top 5 most volatile states</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'month'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'totals'</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">'state'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">top5_data</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'month'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'totals'</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">'state'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">top5_data</span><span class="p">)</span> <span class="c1"># Create line plot with state colors</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Monthly Background Check Patterns for Most Volatile States'</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Month'</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Total Background Checks'</span><span class="p">)</span>
@@ -9050,7 +9153,7 @@ Seasonal Variation Analysis:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [45]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython2"><pre><span></span><span class="n">volatile_states</span> <span class="o">=</span> <span class="n">analyze_state_volatility</span><span class="p">()</span>
@@ -9099,6 +9202,17 @@ Most Volatile States Analysis:
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8267d83e5f138eea">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Plot shows that volatility is driven by state-specific factors (e.g., population size, legislative changes), with smaller states and those undergoing policy shifts being the most unpredictable. smaller states (e.g., Mariana Islands, CV = 0.98) and those with changing gun laws (e.g., North Carolina, CV = 0.33) exhibit the most dramatic monthly fluctuations.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=af96da015637a4a0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -9117,15 +9231,13 @@ Most Volatile States Analysis:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>My analysis reveals three key patterns in U.S. gun background checks: <br>
+<p>My analysis identifies three patterns in U.S. gun background checks: <br>
 <br>
-(1) A moderate negative correlation exists between state income levels and background check rates per capita (median household income: r = -0.41; per capita income: r = -0.45), though statistically insignificant (p &gt; 0.05), with lower-income states like South Dakota (1.40 checks/capita) showing higher rates than wealthier states like New York (0.24);<br>
+(1) A moderate negative correlation between state income levels and checks per capita (r ≈ -0.41 to -0.45) though statistically insignificant (p &gt; 0.05) with lower-income states like South Dakota (1.40 checks/capita) showing higher rates than wealthier states like New York (0.24) \</br></br></p>
+<p>(2) Seasonal peaks in December (30.3M checks) and troughs in June (18.6M checks) reflecting a 63% holiday-period surge \</p>
+<p>(3) Extreme volatility in smaller states (e.g. Mariana Islands CV=0.98) and those with shifting firearm policies. A key limitation is the lack of statistical significance in the income correlation which prevents definitive conclusions about income’s role and suggests unmeasured confounders (e.g. cultural gun ownership norms, state legislation) may better explain variations.<br>
 <br/>
-(2) Significant seasonal variation peaks in December (30.3M checks) and troughs in June (18.6M checks), reflecting a 63% surge during holiday periods;<br/>
-<br/>
-(3) Extreme volatility in smaller states (e.g., Mariana Islands, CV=0.98) and those with shifting firearm policies, where monthly checks fluctuate by 2–11×.<br/>
-<br/>
-These trends suggest economic factors weakly correlate with check rates, while seasonal demand and localized policy/cultural dynamics likely drive patterns more strongly, underscoring the need for state-specific analyses incorporating legislative and crime data to fully explain these variations.</br></br></br></p>
+While seasonal and volatility trends are clearer, the income findings remain exploratory, highlighting the need for richer datasets incorporating policy and cultural metrics to strengthen causal inferences.</br></p>
 </div>
 </div>
 </div>
@@ -9134,11 +9246,11 @@ These trends suggest economic factors weakly correlate with check rates, while s
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython2"><pre><span></span><span class="c1"># Running this cell will execute a bash command to convert this notebook to an .html file</span>
-<span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>nbconvert<span class="w"> </span>--to<span class="w"> </span>html<span class="w"> </span>sample.ipynb
+<span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>nbconvert<span class="w"> </span>--to<span class="w"> </span>html<span class="w"> </span>Investigate_a_Dataset.ipynb
 </pre></div>
 </div>
 </div>
@@ -9151,7 +9263,7 @@ These trends suggest economic factors weakly correlate with check rates, while s
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[NbConvertApp] WARNING | pattern 'Investigate_a_Dataset.ipynb' matched no files
+<pre>[NbConvertApp] WARNING | pattern 'sample.ipynb' matched no files
 This application is used to convert notebook files (*.ipynb)
         to various other formats.
 
@@ -9344,6 +9456,20 @@ Examples
 To see all available configurables, use `--help-all`.
 
 </pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e2a16d3811511fcf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython2"><pre><span></span> 
+</pre></div>
 </div>
 </div>
 </div>
