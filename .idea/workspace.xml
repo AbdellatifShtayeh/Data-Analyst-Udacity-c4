@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5c3cf03-d8c8-4c4f-a10d-2a14d7763beb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Investigate_a_Dataset_FBI_Gun_Data/Investigate_a_Dataset.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Investigate_a_Dataset_FBI_Gun_Data/Investigate_a_Dataset.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Investigate_a_Dataset_FBI_Gun_Data/Investigate_a_Dataset.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project 2/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Real World Data Wrangling with Python/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Jupyter Notebook" />
       </list>
     </option>
   </component>
@@ -31,23 +32,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.example.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.example.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/macbook/PycharmProjects/JupyterProject/Real World Data Wrangling with Python/Kaggle Data",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Real World Data Wrangling with Python/Kaggle Data" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/project 2/Kaggle Data" />
+      <recent name="$PROJECT_DIR$/project 2" />
       <recent name="$PROJECT_DIR$/Investigate_a_Dataset_FBI_Gun_Data" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -74,7 +81,12 @@
       <workItem from="1741431359959" duration="15014000" />
       <workItem from="1741603632724" duration="14939000" />
       <workItem from="1741638471692" duration="3899000" />
-      <workItem from="1741689440488" duration="2615000" />
+      <workItem from="1741689440488" duration="3050000" />
+      <workItem from="1744574575490" duration="806000" />
+      <workItem from="1744902536682" duration="681000" />
+      <workItem from="1744907825243" duration="922000" />
+      <workItem from="1747593841047" duration="2468000" />
+      <workItem from="1747649566950" duration="10911000" />
     </task>
     <servers />
   </component>
